@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+.DS_Store
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.log
+.idea
+*.swp
+
