@@ -1,0 +1,342 @@
+[
+  {
+    "Label Name": "Try",
+    "Action Description": "Player grounds the ball in-goal with control",
+    "What to Detect": "Ball grounding + player posture",
+    "Frame Clue": "Player dives/slides; ref whistle",
+    "Outcome Type": "Yes",
+    "Object(s) Detected": "Ball, Player, Ref",
+    "Field Context": "In-goal area",
+    "Notes": "Audio: Listen for ref whistle after grounding"
+  },
+  {
+    "Label Name": "Conversion_Attempt",
+    "Action Description": "Kick attempt after a try",
+    "What to Detect": "Kick motion + sideline refs",
+    "Frame Clue": "Kicker setup + follow through",
+    "Outcome Type": "Success/Fail",
+    "Object(s) Detected": "Kicker, Sideline Refs",
+    "Field Context": "In front of posts",
+    "Notes": "Audio: Flags and ref voice confirmation"
+  },
+  {
+    "Label Name": "Conversion_Success",
+    "Action Description": "Successful conversion signaled by sideline refs",
+    "What to Detect": "Flags up + cheer",
+    "Frame Clue": "Post-kick ref whistle + flags raised",
+    "Outcome Type": "Success",
+    "Object(s) Detected": "Flags, Refs",
+    "Field Context": "Goal area",
+    "Notes": "Audio: Whistle often used for confirmation"
+  },
+  {
+    "Label Name": "Conversion_Fail",
+    "Action Description": "Unsuccessful conversion (no flag raise)",
+    "What to Detect": "Flags stay down",
+    "Frame Clue": "No motion or minimal reaction",
+    "Outcome Type": "Fail",
+    "Object(s) Detected": "Flags, Refs",
+    "Field Context": "Goal area",
+    "Notes": "Audio: No whistle, or crowd response only"
+  },
+  {
+    "Label Name": "Penalty_Goal_Attempt",
+    "Action Description": "Kick attempt from penalty",
+    "What to Detect": "Ball placement and kick",
+    "Frame Clue": "Pre-kick ref whistle, setup motion",
+    "Outcome Type": "Success/Fail",
+    "Object(s) Detected": "Kicker, Refs",
+    "Field Context": "Anywhere near posts",
+    "Notes": "Audio: Whistle before and after"
+  },
+  {
+    "Label Name": "Penalty_Goal_Success",
+    "Action Description": "Flags raised after penalty kick",
+    "What to Detect": "Flags + ref gesture",
+    "Frame Clue": "Whistle + both flags raised",
+    "Outcome Type": "Success",
+    "Object(s) Detected": "Refs, Flags",
+    "Field Context": "Posts",
+    "Notes": "Audio: Whistle + vocal confirmation"
+  },
+  {
+    "Label Name": "Penalty_Goal_Fail",
+    "Action Description": "Kick misses or judged no good",
+    "What to Detect": "No flag motion or hand wave",
+    "Frame Clue": "Post-kick silence or head shake",
+    "Outcome Type": "Fail",
+    "Object(s) Detected": "Refs",
+    "Field Context": "Posts",
+    "Notes": "Audio: No whistle + ref body language"
+  },
+  {
+    "Label Name": "Drop_Goal_Attempt",
+    "Action Description": "Drop kick in open play",
+    "What to Detect": "Ball drop + quick kick",
+    "Frame Clue": "Drop motion",
+    "Outcome Type": "Success/Fail",
+    "Object(s) Detected": "Kicker, Ball, Ref",
+    "Field Context": "Open play",
+    "Notes": "Audio: Whistle if scored"
+  },
+  {
+    "Label Name": "Drop_Goal_Success",
+    "Action Description": "Ref blows whistle to confirm drop goal",
+    "What to Detect": "Ref points at posts",
+    "Frame Clue": "Whistle + arm signal",
+    "Outcome Type": "Success",
+    "Object(s) Detected": "Ref",
+    "Field Context": "Posts",
+    "Notes": "Audio: Confirming whistle"
+  },
+  {
+    "Label Name": "Drop_Goal_Fail",
+    "Action Description": "No whistle + game continues",
+    "What to Detect": "Ref non-reaction",
+    "Frame Clue": "Play on",
+    "Outcome Type": "Fail",
+    "Object(s) Detected": "Ref",
+    "Field Context": "Posts",
+    "Notes": "Audio: No whistle, no signal"
+  },
+  {
+    "Label Name": "Scrum_Feed_TeamA",
+    "Action Description": "Team A puts ball into scrum",
+    "What to Detect": "Scrumhalf feeds ball in",
+    "Frame Clue": "Crouch-bind-set call + feed",
+    "Outcome Type": "Feed",
+    "Object(s) Detected": "Ball, Scrumhalf",
+    "Field Context": "Scrum zone",
+    "Notes": "Audio: Sequence of ref commands"
+  },
+  {
+    "Label Name": "Scrum_Won_TeamA",
+    "Action Description": "Team A exits scrum with ball",
+    "What to Detect": "Ball exits A-side",
+    "Frame Clue": "Hook and clear",
+    "Outcome Type": "Won",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Scrum zone",
+    "Notes": "Audio: Ref whistle if collapsed"
+  },
+  {
+    "Label Name": "Scrum_Lost_TeamA",
+    "Action Description": "Opponent wins or steals scrum",
+    "What to Detect": "Ball exits B-side",
+    "Frame Clue": "Pushback or wheel",
+    "Outcome Type": "Lost",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Scrum zone",
+    "Notes": "Audio: Whistle often precedes reset or penalty"
+  },
+  {
+    "Label Name": "Lineout_Throw_TeamA",
+    "Action Description": "Team A throws into lineout",
+    "What to Detect": "Ball enters tunnel",
+    "Frame Clue": "Throwing motion",
+    "Outcome Type": "Feed",
+    "Object(s) Detected": "Thrower, Ball",
+    "Field Context": "Touchline",
+    "Notes": "Audio: Ref calls 'numbers' or 'not straight'"
+  },
+  {
+    "Label Name": "Lineout_Won_TeamA",
+    "Action Description": "Ball retained post-jump",
+    "What to Detect": "Catcher secures and lands",
+    "Frame Clue": "Clean catch and setup",
+    "Outcome Type": "Won",
+    "Object(s) Detected": "Ball, Catcher",
+    "Field Context": "Touchline",
+    "Notes": "Audio: Ref silent = clean"
+  },
+  {
+    "Label Name": "Lineout_Lost_TeamA",
+    "Action Description": "Opponent catches ball",
+    "What to Detect": "Miscommunication/jump",
+    "Frame Clue": "Intercept",
+    "Outcome Type": "Lost",
+    "Object(s) Detected": "Ball, Opponent",
+    "Field Context": "Touchline",
+    "Notes": "Audio: Ref indicates direction after knock-on or gain"
+  },
+  {
+    "Label Name": "Ruck_Formed",
+    "Action Description": "Players pile over tackled player",
+    "What to Detect": "Body mound + ball trapped",
+    "Frame Clue": "Post-tackle, players bind",
+    "Outcome Type": "Yes",
+    "Object(s) Detected": "Players, Ball",
+    "Field Context": "Breakdown zone",
+    "Notes": "Audio: Ref calls 'ruck formed' or 'hands away'"
+  },
+  {
+    "Label Name": "Ruck_Won_TeamA",
+    "Action Description": "Ball emerges from own team",
+    "What to Detect": "Scrumhalf passes out",
+    "Frame Clue": "Ball available + play resumes",
+    "Outcome Type": "Won",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Breakdown",
+    "Notes": "Audio: Ref says 'use it' or is silent"
+  },
+  {
+    "Label Name": "Ruck_Lost_TeamA",
+    "Action Description": "Ball stolen or penalty conceded",
+    "What to Detect": "Ref penalises or turnover",
+    "Frame Clue": "Clear change of team",
+    "Outcome Type": "Lost",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Breakdown",
+    "Notes": "Audio: 'Hands in', 'not supporting body weight' etc."
+  },
+  {
+    "Label Name": "Tackle_Positive",
+    "Action Description": "Dominant tackle with gain-line stop",
+    "What to Detect": "Low drive, carrier stopped",
+    "Frame Clue": "Immediate stop",
+    "Outcome Type": "Positive",
+    "Object(s) Detected": "Tackler, Carrier",
+    "Field Context": "Open field",
+    "Notes": "Audio: No ref comment = legal"
+  },
+  {
+    "Label Name": "Tackle_Neutral",
+    "Action Description": "Standard tackle at gain line",
+    "What to Detect": "Carrier held and dropped",
+    "Frame Clue": "Minimal movement",
+    "Outcome Type": "Neutral",
+    "Object(s) Detected": "Tackler, Carrier",
+    "Field Context": "Any zone",
+    "Notes": "Audio: No whistle, play continues"
+  },
+  {
+    "Label Name": "Tackle_Negative",
+    "Action Description": "Missed tackle or carrier breaks through",
+    "What to Detect": "Slipped or late hit",
+    "Frame Clue": "Advantage gained",
+    "Outcome Type": "Negative",
+    "Object(s) Detected": "Carrier",
+    "Field Context": "Anywhere",
+    "Notes": "Audio: 'Advantage blue' or crowd cheer"
+  },
+  {
+    "Label Name": "Kick_In_Play",
+    "Action Description": "Kick while ball is live",
+    "What to Detect": "Kicking motion, flight path",
+    "Frame Clue": "On-the-run kick",
+    "Outcome Type": "Pos/Neu/Neg",
+    "Object(s) Detected": "Kicker, Ball",
+    "Field Context": "Anywhere",
+    "Notes": "Audio: 'Not out', 'advantage over' cues"
+  },
+  {
+    "Label Name": "Kick_Positive",
+    "Action Description": "Territory gain or pressure created",
+    "What to Detect": "Deep kick, chase forces error",
+    "Frame Clue": "Positive field outcome",
+    "Outcome Type": "Positive",
+    "Object(s) Detected": "Ball, Chase",
+    "Field Context": "Backfield",
+    "Notes": "Audio: Ref silence or crowd cheer"
+  },
+  {
+    "Label Name": "Kick_Neutral",
+    "Action Description": "Kick returned or exchanged evenly",
+    "What to Detect": "Kick to space + return",
+    "Frame Clue": "No gain/loss",
+    "Outcome Type": "Neutral",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Midfield",
+    "Notes": "Audio: Balanced tone or restart"
+  },
+  {
+    "Label Name": "Kick_Negative",
+    "Action Description": "Kick leads to loss of possession",
+    "What to Detect": "Direct to touch or turnover",
+    "Frame Clue": "Bad decision",
+    "Outcome Type": "Negative",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Touchline",
+    "Notes": "Audio: Ref whistle + arm signal"
+  },
+  {
+    "Label Name": "Kickoff",
+    "Action Description": "Kickoff to restart game/half",
+    "What to Detect": "Ball dropped from tee",
+    "Frame Clue": "Start whistle + run-up",
+    "Outcome Type": "Pos/Neu/Neg",
+    "Object(s) Detected": "Ball, Players",
+    "Field Context": "Halfway line",
+    "Notes": "Audio: Long ref whistle"
+  },
+  {
+    "Label Name": "Dropout_22m",
+    "Action Description": "Drop kick restart from 22",
+    "What to Detect": "Set piece from own half",
+    "Frame Clue": "Kick from ground",
+    "Outcome Type": "Pos/Neu/Neg",
+    "Object(s) Detected": "Ball",
+    "Field Context": "22m line",
+    "Notes": "Audio: Cue for drop kick restart"
+  },
+  {
+    "Label Name": "Dropout_Goalline",
+    "Action Description": "Drop kick under posts",
+    "What to Detect": "From own goal line",
+    "Frame Clue": "Kick motion",
+    "Outcome Type": "Pos/Neu/Neg",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Goal line",
+    "Notes": "Audio: Ref says 'play on' or not ten meters"
+  },
+  {
+    "Label Name": "Line_Break_TeamA",
+    "Action Description": "Clean break past defenders",
+    "What to Detect": "Player sprints through gap",
+    "Frame Clue": "Fast run through line",
+    "Outcome Type": "Yes",
+    "Object(s) Detected": "Ball Carrier",
+    "Field Context": "Backfield",
+    "Notes": "Audio: Excited crowd + ref 'advantage over'"
+  },
+  {
+    "Label Name": "Penalty_Conceded_TeamA",
+    "Action Description": "Infraction results in penalty",
+    "What to Detect": "Ref whistle + arm",
+    "Frame Clue": "Blown whistle",
+    "Outcome Type": "Yes",
+    "Object(s) Detected": "Ref",
+    "Field Context": "Any",
+    "Notes": "Audio: 'Offside', 'not releasing', etc."
+  },
+  {
+    "Label Name": "Possession_TeamA",
+    "Action Description": "Continuous ball control",
+    "What to Detect": "Team has ball",
+    "Frame Clue": "Measured in seconds",
+    "Outcome Type": "%",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Across match",
+    "Notes": "Audio: Use start/end of phases"
+  },
+  {
+    "Label Name": "Territory_TeamA",
+    "Action Description": "Ball in attacking 50",
+    "What to Detect": "Ball crosses halfway",
+    "Frame Clue": "Held or kicked into opp zone",
+    "Outcome Type": "%",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Field half",
+    "Notes": "Audio: Use ball tracking"
+  },
+  {
+    "Label Name": "Ball_In_Play",
+    "Action Description": "Time when ball is active",
+    "What to Detect": "No stoppage",
+    "Frame Clue": "Continuous action",
+    "Outcome Type": "Seconds",
+    "Object(s) Detected": "Ball",
+    "Field Context": "Match-wide",
+    "Notes": "Audio: Any whistle = pause"
+  }
+]
